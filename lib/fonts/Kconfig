@@ -119,8 +119,16 @@ config FONT_TER16x32
 	  This is the high resolution, large version for use with HiDPI screens.
 	  If the standard font is unreadable for you, say Y, otherwise say N.
 
+config FONT_16x16_CJK
+	bool "console 16x16 CJK font ( cover BMP )" if FONTS
+	depends on FRAMEBUFFER_CONSOLE
+	help
+	  This is a high resolution console font that covers UNICODE bmp,
+	  mostly is CJK font. If you want full UNICODE support on the VT console, say Y.
+
 config FONT_AUTOSELECT
 	def_bool y
+	depends on FRAMEBUFFER_CONSOLE || SGI_NEWPORT_CONSOLE || STI_CONSOLE || USB_SISUSBVGA_CON
 	depends on !FONT_8x8
 	depends on !FONT_6x11
 	depends on !FONT_7x14
@@ -132,6 +140,7 @@ config FONT_AUTOSELECT
 	depends on !FONT_SUN12x22
 	depends on !FONT_10x18
 	depends on !FONT_TER16x32
+	select FONT_16x16_CJK
 	select FONT_8x16
 
 endif # FONT_SUPPORT
