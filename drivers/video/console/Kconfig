@@ -243,7 +243,6 @@ config FONT_AUTOSELECT
 	depends on !FONT_SUN8x16
 	depends on !FONT_SUN12x22
 	depends on !FONT_10x18
-	select FONT_8x16
-
+	select FONT_16x16_CJK
 endmenu
 
