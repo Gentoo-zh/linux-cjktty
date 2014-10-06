@@ -395,7 +395,9 @@ struct fb_tile_ops {
 /* hints */
 #define FBINFO_VIRTFB		0x0004 /* FB is System RAM, not device. */
 #define FBINFO_PARTIAL_PAN_OK	0x0040 /* otw use pan only for double-buffering */
-#define FBINFO_READS_FAST	0x0080 /* soft-copy faster than rendering */
+
+/* cjktty won't work with it */
+#define FBINFO_READS_FAST	0      /* soft-copy faster than rendering */
 
 /* hardware supported ops */
 /*  semantics: when a bit is set, it indicates that the operation is
