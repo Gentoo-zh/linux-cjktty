@@ -262,4 +262,13 @@ extern void fbcon_set_rotate(struct fbcon_ops *ops);
 #define fbcon_set_rotate(x) do {} while(0)
 #endif /* CONFIG_FRAMEBUFFER_CONSOLE_ROTATION */
 
+#ifdef CONFIG_DMI
+int fbcon_platform_get_rotate(struct fb_info *info);
+#else
+#define fbcon_platform_get_rotate(i) FB_ROTATE_UR
+#endif /* CONFIG_DMI */
+
+extern int fbcon_softback_size;
+extern int fbcon_is_softback(const unsigned short *str);
+
 #endif /* _VIDEO_FBCON_H */
