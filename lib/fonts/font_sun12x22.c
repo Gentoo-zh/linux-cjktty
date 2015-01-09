@@ -6163,4 +6163,5 @@ const struct font_desc font_sun_12x22 = {
 #else
 	.pref	= -1,
 #endif
+	.charcount = 255,
 };
