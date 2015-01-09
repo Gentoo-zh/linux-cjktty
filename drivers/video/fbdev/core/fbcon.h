@@ -268,4 +268,7 @@ int fbcon_platform_get_rotate(struct fb_info *info);
 #define fbcon_platform_get_rotate(i) FB_ROTATE_UR
 #endif /* CONFIG_DMI */
 
+extern int fbcon_softback_size;
+extern int fbcon_is_softback(const unsigned short *str);
+
 #endif /* _VIDEO_FBCON_H */
