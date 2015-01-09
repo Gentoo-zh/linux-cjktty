@@ -330,6 +330,8 @@ int set_selection_kernel(struct tiocl_selection *v, struct tty_struct *tty)
 			}
 			obp = bp;
 		}
+		if (c > 0x80)
+			i += 2;
 	}
 	sel_buffer_lth = bp - sel_buffer;
 	return 0;
